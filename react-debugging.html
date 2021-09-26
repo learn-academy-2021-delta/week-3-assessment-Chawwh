@@ -63,22 +63,27 @@
           // No need to change anything ABOVE this line ^
           
           return(
+            <>
               <h1>Draw a Card</h1>
-              <button onClick={}>
+
+              <button onClick={this.drawCard}>
                 Click to Draw a Card
-              </button>
-              <button onClick={shuffle}>
+                </button>
+
+              <button onClick={this.shuffle}>
                 Return Cards and Shuffle Deck
-              </button>
+                </button>
+
               <div style={handStyles}>
                 {this.state.hand.map((card, index) => {
                   return (
                     <div style={cardStyles} key={index}>
-                      {card}
+                    {card}
                     </div>
                   )
                 })}
               </div>
+              </>
           )
         }
       }
@@ -89,3 +94,8 @@
     </script>
   </body>
 </html>
+<!-- I'm not getting errors in the console anymore but the webpage just doesn't look right... The buttons don't do anything...-->
+<!-- Wheeew That was tricky! I finally got everything to load in!! -->
+<!-- Edit 1.) Added fragments to line 66 and 86 -->
+<!-- Edit 2.) Added {this.drawCard} to line 69 (nice)-->
+<!-- Edit 3.) Added `this.` to onClick={shuffle} on line 73-->
